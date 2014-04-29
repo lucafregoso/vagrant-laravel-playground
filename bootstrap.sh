@@ -109,6 +109,6 @@ fi
 
 # Get rid of existing html folder
 sudo rm -rf /var/www/html
-git clone https://github.com/laravel/laravel.git /var/www/tmp && rsync -a /var/www/tmp/ /var/www/ && rm -rf /var/www/tmp
+git clone https://github.com/laravel/laravel.git /var/www/tmp && rm -Rf /var/www/tmp/.git* && rsync -r -ignore-existing /var/www/tmp/ /var/www/ && rm -rf /var/www/tmp
 cd /var/www/ && composer install && composer update
 source /etc/profile
